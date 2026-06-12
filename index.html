@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Manan Negi – GenAI &amp; Automation Engineer. Portfolio showcasing AI-powered automation tools, full-stack dashboards, and data pipelines built with Python, Claude AI, React, and ETL." />
+  <title>Manan Negi | GenAI &amp; Automation Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- ─────────────────────────────────────────── NAVIGATION ── -->
+  <nav class="nav" id="navbar">
+    <a href="#" class="nav__logo">
+      <span class="logo-text">Manan<span class="logo-dot">.</span></span>
+    </a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about" class="nav__link">About</a></li>
+      <li><a href="#skills" class="nav__link">Skills</a></li>
+      <li><a href="#projects" class="nav__link">Projects</a></li>
+      <li><a href="#gallery" class="nav__link">Gallery</a></li>
+      <li><a href="#contact" class="nav__link">Contact</a></li>
+    </ul>
+    <button class="nav__cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      Let's Talk <span class="cta-arrow">↗</span>
+    </button>
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileClose">✕</button>
+    <ul class="mobile-menu__links">
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#gallery" class="mobile-link">Gallery</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-menu__social">
+      <a href="https://github.com/MNegi17" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/manan-negi-556983224" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://kaggle.com/" target="_blank" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────────── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero__bg">
+      <img src="images/hero_bg.png" alt="" class="hero__bg-img" />
+      <div class="hero__gradient-overlay"></div>
+    </div>
+
+    <!-- Floating data chips -->
+    <div class="hero__chips">
+      <span class="chip chip--1">Python</span>
+      <span class="chip chip--2">Claude AI</span>
+      <span class="chip chip--3">React JS</span>
+      <span class="chip chip--4">SQL</span>
+      <span class="chip chip--5">ETL</span>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow"><span class="status-dot"></span> Open to opportunities</p>
+      <h1 class="hero__title">
+        <span class="title-line" data-text="Building">Building</span>
+        <span class="title-line title-line--accent" data-text="AI-Powered">AI-Powered</span>
+        <span class="title-line" data-text="Solutions">Solutions</span>
+      </h1>
+      <p class="hero__subtitle">
+        GenAI &amp; Automation Engineer crafting intelligent tools that eliminate manual work.
+        From AI-driven catalog systems to full-stack dashboards — I automate what slows businesses down.
+      </p>
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary" id="viewWorkBtn">
+          <span>View My Work</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn--ghost" id="contactBtn">
+          Contact Me
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="hero__stats">
+      <div class="stat">
+        <span class="stat__number" data-target="99">0</span><span class="stat__plus">%</span>
+        <span class="stat__label">Reporting Time Saved</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat__number" data-target="6">0</span><span class="stat__plus">+</span>
+        <span class="stat__label">Production Projects</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat__number" data-target="98">0</span><span class="stat__plus">K+</span>
+        <span class="stat__label">Units Analyzed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────── ABOUT ── -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__visual">
+          <div class="avatar-wrapper">
+            <img src="images/avatar.png" alt="Manan Negi" class="avatar-img" id="avatarImg" />
+            <div class="avatar-ring"></div>
+            <div class="avatar-glow"></div>
+          </div>
+          <div class="about__badge">
+            <i class="fas fa-robot"></i>
+            <div>
+              <strong>GenAI Engineer</strong>
+              <span>Automation &amp; AI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__text">
+          <p class="section-eyebrow">About Me</p>
+          <h2 class="section-title">Automating the future <br /> with AI &amp; code</h2>
+          <p class="about__bio">
+            Hi! I'm <strong>Manan Negi</strong>, a motivated fresher and AI enthusiast with hands-on production
+            experience building Python automation tools, REST API integrations, and data pipelines. Currently working
+            as a <strong>Generative AI &amp; Automation Intern</strong> at Purple United Kids, where I've shipped
+            tools that cut manual reporting from 30+ hours to under 2 minutes.
+          </p>
+          <p class="about__bio">
+            I'm passionate about Generative AI and NLP with practical exposure to LLM-powered workflows using
+            <strong>Claude (Anthropic)</strong>, Cursor AI, and Anysphere. Previously interned at
+            <strong>Cognizant Technology Solutions</strong> as a Data Engineering Intern, building ETL pipelines
+            with Informatica PowerCenter.
+          </p>
+          <div class="about__highlights">
+            <div class="highlight-item">
+              <i class="fas fa-robot"></i>
+              <span>GenAI &amp; LLM Workflows</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-cogs"></i>
+              <span>Python Automation</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-database"></i>
+              <span>ETL &amp; Data Pipelines</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-chart-bar"></i>
+              <span>Analytics &amp; Dashboards</span>
+            </div>
+          </div>
+          <div class="about__cta">
+            <a href="images/Manan_Negi_GenAI_Resume.pdf" download="Manan_Negi_Resume.pdf" class="btn btn--primary" id="resumeBtn">
+              <i class="fas fa-download"></i>
+              Download Resume
+            </a>
+            <div class="social-row">
+              <a href="https://github.com/MNegi17" target="_blank" class="social-icon" aria-label="GitHub"><i
+                  class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/manan-negi-556983224" target="_blank" class="social-icon" aria-label="LinkedIn"><i
+                  class="fab fa-linkedin-in"></i></a>
+              <a href="mailto:manannegi17@gmail.com" class="social-icon" aria-label="Email"><i
+                  class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────── SKILLS ── -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">My Toolkit</p>
+        <h2 class="section-title">Skills &amp; Technologies</h2>
+        <p class="section-desc">From AI pipelines to full-stack dashboards — my production stack</p>
+      </div>
+
+      <!-- Bento Skills Grid -->
+      <div class="skills-bento">
+
+        <!-- Large card: Python -->
+        <div class="bento-card bento-card--large bento-card--python" id="skillPython">
+          <div class="bento-card__icon">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+          </div>
+          <div class="bento-card__content">
+            <h3>Python</h3>
+            <p>Pandas, NumPy, scikit-learn, REST APIs, Automation Scripts, Bash/Unix</p>
+          </div>
+          <div class="bento-card__bar">
+            <div class="bar-fill" data-width="92%"></div>
+          </div>
+          <span class="bento-card__level">Advanced</span>
+        </div>
+
+        <!-- GenAI / LLMs -->
+        <div class="bento-card bento-card--sql" id="skillGenAI">
+          <div class="bento-card__icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>Generative AI</h3>
+          <p>Claude (Anthropic), Cursor AI, Anysphere — used in production projects</p>
+          <div class="bento-card__bar">
+            <div class="bar-fill" data-width="88%"></div>
+          </div>
+        </div>
+
+        <!-- React / JavaScript -->
+        <div class="bento-card bento-card--powerbi" id="skillReact">
+          <div class="bento-card__icon">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+          </div>
+          <h3>React JS</h3>
+          <p>Component Design, KPI Dashboards, JavaScript (Basic), Full-Stack Dev</p>
+          <div class="bento-card__bar">
+            <div class="bar-fill" data-width="78%"></div>
+          </div>
+        </div>
+
+        <!-- SQL -->
+        <div class="bento-card bento-card--excel" id="skillSQL">
+          <div class="bento-card__icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>SQL</h3>
+          <p>MySQL, PostgreSQL, Oracle DB, Window Functions, CTEs</p>
+          <div class="bento-card__bar">
+            <div class="bar-fill" data-width="85%"></div>
+          </div>
+        </div>
+
+        <!-- ETL / Data Engineering -->
+        <div class="bento-card bento-card--tableau" id="skillETL">
+          <div class="bento-card__icon">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <h3>ETL &amp; Data Eng.</h3>
+          <p>Informatica PowerCenter, Data Transformation, Validation, XML Pipelines</p>
+          <div class="bento-card__bar">
+            <div class="bar-fill" data-width="80%"></div>
+          </div>
+        </div>
+
+        <!-- BI & Analytics Wide Card -->
+        <div class="bento-card bento-card--stats bento-card--wide" id="skillBI">
+          <div class="bento-card__icon">
+            <i class="fas fa-chart-pie"></i>
+          </div>
+          <div class="bento-card__content">
+            <h3>BI &amp; Analytics</h3>
+            <p>Power BI · DAX · Advanced Excel · KPI Tracking · MIS Reporting · Supervised &amp; Unsupervised ML · Feature Engineering · Model Evaluation</p>
+          </div>
+          <div class="stats-mini-chart">
+            <div class="mini-bar" style="height:50%"></div>
+            <div class="mini-bar" style="height:75%"></div>
+            <div class="mini-bar" style="height:60%"></div>
+            <div class="mini-bar" style="height:95%"></div>
+            <div class="mini-bar" style="height:70%"></div>
+            <div class="mini-bar" style="height:85%"></div>
+            <div class="mini-bar" style="height:55%"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────── PROJECTS ── -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">My Work</p>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-desc">Scroll through my real-world case studies</p>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="project-filters" id="projectFilters">
+        <button class="filter-btn active" data-target="dyno">Dyno Dashboard</button>
+        <button class="filter-btn" data-target="myntra">Myntra Auto Lister</button>
+        <button class="filter-btn" data-target="d2c">Shopify AutoLister</button>
+        <button class="filter-btn" data-target="reportflow">ReportFlow PUK</button>
+        <button class="filter-btn" data-target="bluecare">Health Database</button>
+        <button class="filter-btn" data-target="insurance">Insurance Analytics</button>
+      </div>
+
+      <!-- Scrollytelling Projects Layout -->
+      <div class="scrolly-container">
+        
+        <!-- Pinned Widescreen Visuals -->
+        <div class="scrolly-visuals">
+          <div class="scrolly-visuals-inner">
+            
+            <!-- Slide 1: Dyno -->
+            <div class="scrolly-slide active" data-slide-id="dyno">
+              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, transparent 70%);"></div>
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                  <span class="browser-address">dyno-sales-dashboard.app</span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/Dyno1.png" alt="Dyno Sales Dashboard" />
+                </div>
+              </div>
+              <div class="slide-nav-hint">Images 1 of 5 · Click window for details carousel</div>
+            </div>
+
+            <!-- Slide 2: Myntra -->
+            <div class="scrolly-slide" data-slide-id="myntra">
+              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, transparent 70%);"></div>
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                  <span class="browser-address">myntra-autolister.app</span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/Myntra1.png" alt="Myntra Auto Lister PRO" />
+                </div>
+              </div>
+              <div class="slide-nav-hint">Images 1 of 2 · Click window for details carousel</div>
+            </div>
+
+            <!-- Slide 3: D2C Shopify -->
+            <div class="scrolly-slide" data-slide-id="d2c">
+              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, transparent 70%);"></div>
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                  <span class="browser-address">d2c-autolister.app</span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/D2C1.png" alt="D2C Shopify AutoLister Pro" />
+                </div>
+              </div>
+              <div class="slide-nav-hint">Images 1 of 2 · Click window for details carousel</div>
+            </div>
+
+            <!-- Slide 4: ReportFlow -->
+            <div class="scrolly-slide" data-slide-id="reportflow">
+              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, transparent 70%);"></div>
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                  <span class="browser-address">reportflow-puk.app</span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/ReportFlow1.png" alt="ReportFlow PUK" />
+                </div>
+              </div>
+              <div class="slide-nav-hint">Images 1 of 4 · Click window for details carousel</div>
+            </div>
+
+            <!-- Slide 5: Blue Care DB -->
+            <div class="scrolly-slide" data-slide-id="bluecare">
+              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);"></div>
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                  <span class="browser-address">blue-care-database.local</span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/Infomatica-1.png" alt="Blue Care Health Database" />
+                </div>
+              </div>
+              <div class="slide-nav-hint">Images 1 of 3 · Click window for details carousel</div>
+            </div>
+
+            <!-- Slide 6: Insurance -->
+            <div class="scrolly-slide" data-slide-id="insurance">
+              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(112, 0, 255, 0.1) 0%, transparent 70%);"></div>
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                  <span class="browser-address">insurance-analytics.dashboard</span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/insurance_dashboard.png" alt="Insurance Analytics Dashboard" />
+                </div>
+              </div>
+              <div class="slide-nav-hint">Click window for details carousel</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Scrolling Text Column -->
+        <div class="scrolly-scroll">
+          
+          <!-- Section 1: Dyno -->
+          <div class="project-scroll-section" id="section-dyno" data-project-id="dyno"
+               data-title="Dyno Sales Dashboard"
+               data-desc-full="Dyno Sales Dashboard is a real-time sales analytics dashboard built for tracking revenue, units, and targets across multiple channels. Built using React and Vite, it integrates with Supabase to provide target achievement indicators, top performers listings, and dynamic monthly filters."
+               data-tools="React, Vite, Supabase, Recharts, Vercel"
+               data-metrics="Real-time target progress; Dynamic filter-by-month graphs"
+               data-images="images/Dyno1.png,images/Dyno2.png,images/Dyno3.png,images/Dyno4.png,images/Dyno5.png"
+               data-github="https://github.com/MNegi17/Dyno-Dashboard"
+               data-demo="https://dyno-dashboard.vercel.app/">
+            
+            <div class="mobile-visual-preview">
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/Dyno1.png" alt="Dyno Sales Dashboard" />
+                </div>
+              </div>
+            </div>
+
+            <div class="scroll-section-tags">
+              <span class="tag">React</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Recharts</span>
+            </div>
+            <h3 class="scroll-section-title">Dyno Sales Dashboard</h3>
+            <p class="scroll-section-desc">High-performance real-time sales analytics dashboard with division tracking. Displays key sales trends, dynamically filters category listings, and outputs real-time target versus achievement graphs.</p>
+            <div class="scroll-section-metrics">
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">Real-time target progression metrics</span>
+              </div>
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">Dynamic filter-by-month interactive graphs</span>
+              </div>
+            </div>
+            <div class="scroll-section-actions">
+              <button class="btn btn--primary view-details-trigger">
+                <span>View Details</span>
+                <i class="fas fa-expand-arrows-alt"></i>
+              </button>
+              <a href="https://dyno-dashboard.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+              <a href="https://github.com/MNegi17/Dyno-Dashboard" target="_blank" class="project-link repo-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+
+          <!-- Section 2: Myntra -->
+          <div class="project-scroll-section" id="section-myntra" data-project-id="myntra"
+               data-title="MN Myntra Auto Lister PRO"
+               data-desc-full="MN Myntra Auto Lister PRO is a premium, AI-powered catalog automation web application built for fashion e-commerce vendors. The tool automates the tedious, manual process of catalog listing on Myntra by mapping size variants, prices, barcodes, and fabric attributes into Myntra's official SKU templates. It integrates Google Gemini Vision AI to analyze product photos and automatically classify visual design attributes like necklines, prints, patterns, and sleeve styles."
+               data-tools="Python, Flask, Google Gemini AI, Pandas, MongoDB"
+               data-metrics="Saves 95% manual data entry; Analyzed 10k+ SKU sheets automatically"
+               data-images="images/Myntra1.png,images/Myntra2.png"
+               data-github="https://github.com/MNegi17/Myntra-Auto-Lister"
+               data-demo="https://myntra-auto-lister-production.up.railway.app/">
+            
+            <div class="mobile-visual-preview">
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/Myntra1.png" alt="Myntra Auto Lister PRO" />
+                </div>
+              </div>
+            </div>
+
+            <div class="scroll-section-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Gemini AI</span>
+              <span class="tag">MongoDB</span>
+            </div>
+            <h3 class="scroll-section-title">Myntra Auto Lister PRO</h3>
+            <p class="scroll-section-desc">AI-powered catalog automation application for fashion e-commerce vendors. Integrates Google Gemini Vision AI to dynamically extract styling attributes directly from garment photographs, and handles warehouse to Myntra size template conversions.</p>
+            <div class="scroll-section-metrics">
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">Saves 95% manual data entry time</span>
+              </div>
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">Analyzed 10k+ SKU sheets automatically</span>
+              </div>
+            </div>
+            <div class="scroll-section-actions">
+              <button class="btn btn--primary view-details-trigger">
+                <span>View Details</span>
+                <i class="fas fa-expand-arrows-alt"></i>
+              </button>
+              <a href="https://myntra-auto-lister-production.up.railway.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+              <a href="https://github.com/MNegi17/Myntra-Auto-Lister" target="_blank" class="project-link repo-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+
+          <!-- Section 3: D2C Shopify -->
+          <div class="project-scroll-section" id="section-d2c" data-project-id="d2c"
+               data-title="D2C Shopify AutoLister Pro"
+               data-desc-full="D2C Shopify AutoLister Pro is a robust, widescreen console dashboard application connecting a React (Next.js) frontend with a Python FastAPI backend. Integrated with serverless PostgreSQL (Neon), it automates warehouse mapping rules, database schemas, and syncs listings directly to Shopify stores via API."
+               data-tools="Next.js, FastAPI, PostgreSQL (Neon), Shopify API, Docker"
+               data-metrics="Automates shopify uploads; Handles real-time server logging console"
+               data-images="images/D2C1.png,images/D2C2.png"
+               data-github="https://github.com/MNegi17/D2C_AutoLister"
+               data-demo="https://d2c-autolister-pro.up.railway.app/">
+            
+            <div class="mobile-visual-preview">
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/D2C1.png" alt="D2C Shopify AutoLister Pro" />
+                </div>
+              </div>
+            </div>
+
+            <div class="scroll-section-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Postgres</span>
+            </div>
+            <h3 class="scroll-section-title">D2C Shopify AutoLister</h3>
+            <p class="scroll-section-desc">Widescreen dashboard console automating product creation and database syncs. Seamlessly maps warehouse structures to Shopify stores via API endpoints, and features an integrated real-time server log console.</p>
+            <div class="scroll-section-metrics">
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">Automates shopify uploads & database syncs</span>
+              </div>
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">Real-time web server logging dashboard</span>
+              </div>
+            </div>
+            <div class="scroll-section-actions">
+              <button class="btn btn--primary view-details-trigger">
+                <span>View Details</span>
+                <i class="fas fa-expand-arrows-alt"></i>
+              </button>
+              <a href="https://d2c-autolister-pro.up.railway.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+              <a href="https://github.com/MNegi17/D2C_AutoLister" target="_blank" class="project-link repo-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+
+          <!-- Section 4: ReportFlow -->
+          <div class="project-scroll-section" id="section-reportflow" data-project-id="reportflow"
+               data-title="ReportFlow PUK"
+               data-desc-full="ReportFlow PUK is a business analytics and automation workflow portal created for Purple United Kids. It automates complex spreadsheet processing, return rate tracking, and generates detailed sales insights for executive review."
+               data-tools="React, Node.js, Excel Automation, Data Analysis"
+               data-metrics="Speeds up report generation by 4x; Tracks return metrics live"
+               data-images="images/ReportFlow1.png,images/ReportFlow2.png,images/ReportFlow3.png,images/ReportFlow4.png"
+               data-github=""
+               data-demo="https://reportflow-puk.netlify.app/">
+            
+            <div class="mobile-visual-preview">
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/ReportFlow1.png" alt="ReportFlow PUK" />
+                </div>
+              </div>
+            </div>
+
+            <div class="scroll-section-tags">
+              <span class="tag">React</span>
+              <span class="tag">Excel Automation</span>
+              <span class="tag">PUK</span>
+            </div>
+            <h3 class="scroll-section-title">ReportFlow PUK</h3>
+            <p class="scroll-section-desc">Automated data analysis and dashboard reporter for business operations. Created for Purple United Kids to speed up warehouse data cleaning, track return logs, and automatically translate spreadsheet data into clear summaries.</p>
+            <div class="scroll-section-metrics">
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">Speeds up report generation by 4x</span>
+              </div>
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">Tracks warehouse return metrics live</span>
+              </div>
+            </div>
+            <div class="scroll-section-actions">
+              <button class="btn btn--primary view-details-trigger">
+                <span>View Details</span>
+                <i class="fas fa-expand-arrows-alt"></i>
+              </button>
+              <a href="https://reportflow-puk.netlify.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+            </div>
+          </div>
+
+          <!-- Section 5: Blue Care -->
+          <div class="project-scroll-section" id="section-bluecare" data-project-id="bluecare"
+               data-title="Blue Care Health Database"
+               data-desc-full="Developed a database migration and validation pipeline for managing health subscriber cohorts. Utilized the Informatica PowerCenter ETL suite to perform data cleansing, normalization, and transform records into customized subscriber letters in XML format."
+               data-tools="Informatica PowerCenter, SQL, Data Validation, XML"
+               data-metrics="99.9% letter output accuracy; Processes massive healthcare cohorts"
+               data-images="images/Infomatica-1.png,images/Informatica-2.png,images/Informatica-3.png"
+               data-github=""
+               data-demo="">
+            
+            <div class="mobile-visual-preview">
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/Infomatica-1.png" alt="Blue Care Health Database" />
+                </div>
+              </div>
+            </div>
+
+            <div class="scroll-section-tags">
+              <span class="tag">ETL</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Informatica</span>
+            </div>
+            <h3 class="scroll-section-title">Blue Care Health Database</h3>
+            <p class="scroll-section-desc">Robust database infrastructure with data validation and XML output. Gathers demographic member records, executes validation scripts via Informatica PowerCenter ETL suite, and maps secure data output blocks.</p>
+            <div class="scroll-section-metrics">
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">99.9% database validation accuracy</span>
+              </div>
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">Processes massive healthcare cohorts safely</span>
+              </div>
+            </div>
+            <div class="scroll-section-actions">
+              <button class="btn btn--primary view-details-trigger">
+                <span>View Details</span>
+                <i class="fas fa-expand-arrows-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Section 6: Insurance -->
+          <div class="project-scroll-section" id="section-insurance" data-project-id="insurance"
+               data-title="Insurance Analytics Dashboard"
+               data-desc-full="Developed an interactive Power BI dashboard featuring dynamic KPIs (Total Premium, Claims, Loss Ratio) and demographic segmentation trends. Built robust data models and DAX queries to enable stakeholders to track risk patterns and profitability."
+               data-tools="Power BI, DAX, Power Query, Data Modeling"
+               data-metrics="Consolidated 3 database sheets; Features dynamic demographic slicers"
+               data-images="images/insurance_dashboard.png"
+               data-github="https://github.com/MNegi17/Insurance-Analytics-Dashboard-using-Power-BI"
+               data-demo="">
+            
+            <div class="mobile-visual-preview">
+              <div class="browser-mock">
+                <div class="browser-header">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                </div>
+                <div class="browser-body">
+                  <img src="images/insurance_dashboard.png" alt="Insurance Analytics Dashboard" />
+                </div>
+              </div>
+            </div>
+
+            <div class="scroll-section-tags">
+              <span class="tag">Power BI</span>
+              <span class="tag">DAX</span>
+              <span class="tag">Data Model</span>
+            </div>
+            <h3 class="scroll-section-title">Insurance Analytics</h3>
+            <p class="scroll-section-desc">Interactive Power BI dashboard for risk monitoring and claim patterns. Features business KPIs like loss ratios, aggregates insurance database records, and parses claims categories with advanced DAX expressions.</p>
+            <div class="scroll-section-metrics">
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">Consolidated 3 database logs seamlessly</span>
+              </div>
+              <div class="scroll-section-metric-item">
+                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="scroll-section-metric-text">Features interactive demographic charts</span>
+              </div>
+            </div>
+            <div class="scroll-section-actions">
+              <button class="btn btn--primary view-details-trigger">
+                <span>View Details</span>
+                <i class="fas fa-expand-arrows-alt"></i>
+              </button>
+              <a href="https://github.com/MNegi17/Insurance-Analytics-Dashboard-using-Power-BI" target="_blank" class="project-link repo-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- "More Coming" card -->
+        <div class="project-card project-card--coming reveal-card" id="projectComingSoon">
+          <div class="coming-soon-content">
+            <div class="coming-icon"><i class="fas fa-plus-circle"></i></div>
+            <h3>More Projects</h3>
+            <p>Coming Soon</p>
+            <span class="coming-tag">Stay tuned ✨</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────── GALLERY ── -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">My Journey</p>
+        <h2 class="section-title">Experiences & <span class="text-gradient">Stories</span></h2>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Story Card 1: Cognizant -->
+        <div class="story-card">
+          <div class="story-card__image" id="galleryCarousel1">
+            <img src="images/Cogni-1.jpg" alt="Cognizant Experience 1" class="carousel-img active" style="object-fit: cover; object-position: center 70%;" />
+            <img src="images/Cogni-2.jpg" alt="Cognizant Experience 2" class="carousel-img" style="object-fit: cover; object-position: center 70%;" />
+            <button class="carousel-next" id="galleryNext1" aria-label="Next Image"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <div class="story-card__content">
+            <span class="story-card__date">Cognizant</span>
+            <h3>Data Engineer Intern</h3>
+            <p>Specialized in data integration and transformation using the Informatica PowerCenter ETL suite. Gained comprehensive hands-on experience building robust data pipelines, while honing advanced SQL skills to optimize complex data workflows and manage large-scale databases efficiently.</p>
+          </div>
+        </div>
+
+        <!-- Story Card 2: Purple United Kids -->
+        <div class="story-card">
+          <div class="story-card__image">
+            <img src="images/Purple-1.jpg" alt="Purple United Kids Experience" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2;" />
+          </div>
+          <div class="story-card__content">
+            <span class="story-card__date">Purple United Kids</span>
+            <h3>Business Analyst Executive</h3>
+            <p>Rapidly progressed from Business Analyst Intern to Executive by consistently delivering high-impact data solutions. Spearheaded comprehensive sales and return analyses, engineered automated processes to streamline workflows, and developed detailed business reports to provide actionable, strategic insights directly to stakeholders.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────── TOOLS MARQUEE ── -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span>Python</span><span>·</span>
+      <span>Claude AI</span><span>·</span>
+      <span>React JS</span><span>·</span>
+      <span>SQL</span><span>·</span>
+      <span>Informatica ETL</span><span>·</span>
+      <span>Power BI</span><span>·</span>
+      <span>scikit-learn</span><span>·</span>
+      <span>REST APIs</span><span>·</span>
+      <span>Pandas</span><span>·</span>
+      <span>Advanced Excel</span><span>·</span>
+      <span>Git &amp; GitHub</span><span>·</span>
+      <span>NumPy</span><span>·</span>
+      <span>Python</span><span>·</span>
+      <span>Claude AI</span><span>·</span>
+      <span>React JS</span><span>·</span>
+      <span>SQL</span><span>·</span>
+      <span>Informatica ETL</span><span>·</span>
+      <span>Pandas</span><span>·</span>
+      <span>NumPy</span><span>·</span>
+      <span>Seaborn</span><span>·</span>
+      <span>Matplotlib</span><span>·</span>
+      <span>Statistics</span><span>·</span>
+      <span>Data Storytelling</span><span>·</span>
+      <span>EDA</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────────── CONTACT ── -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__left">
+          <p class="section-eyebrow">Get In Touch</p>
+          <h2 class="section-title">Let's Work<br /><span class="text-gradient">Together</span></h2>
+          <p class="contact__desc">
+            Whether you're looking for a data analyst intern, have a project in mind,
+            or just want to connect — my inbox is always open.
+          </p>
+          <div class="contact__info">
+            <a href="mailto:manannegi17@gmail.com" class="contact-info-item" id="emailLink">
+              <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+              <span>manannegi17@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/manan-negi-556983224" target="_blank" class="contact-info-item" id="linkedinLink">
+              <div class="contact-info-icon"><i class="fab fa-linkedin-in"></i></div>
+              <span>linkedin.com/in/manan-negi</span>
+            </a>
+            <a href="https://github.com/MNegi17" target="_blank" class="contact-info-item" id="githubLink">
+              <div class="contact-info-icon"><i class="fab fa-github"></i></div>
+              <span>github.com/MNegi17</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+          <form action="https://formsubmit.co/manannegi17@gmail.com" method="POST" target="hidden_iframe" class="contact-form" id="contactForm">
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Portfolio Contact Message!">
+            <input type="hidden" name="_template" value="table">
+            
+            <div class="form-group">
+              <label for="nameInput">Your Name</label>
+              <input type="text" id="nameInput" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="emailInput">Email Address</label>
+              <input type="email" id="emailInput" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subjectInput">Subject</label>
+              <input type="text" id="subjectInput" name="subject" placeholder="Internship Opportunity" />
+            </div>
+            <div class="form-group">
+              <label for="messageInput">Message</label>
+              <textarea id="messageInput" name="message" rows="5"
+                placeholder="Tell me about the opportunity or project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="sendMsgBtn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="#" class="footer__logo">
+          <span class="logo-text">Manan<span class="logo-dot">.</span></span>
+          <p>Aspiring Data Analyst</p>
+        </a>
+        <div class="footer__links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer__social">
+          <a href="https://github.com/MNegi17" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/manan-negi-556983224" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://kaggle.com/" target="_blank" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Manan. Crafted with <span class="heart">♥</span> and data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Details Modal -->
+  <div class="modal" id="projectModal" aria-hidden="true" role="dialog">
+    <div class="modal__overlay" id="modalOverlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="modalCloseBtn" aria-label="Close modal">✕</button>
+      <div class="modal__body" id="modalBody">
+        <!-- Dynamically filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- GSAP Libraries for Premium Smooth Scroll Transitions -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
