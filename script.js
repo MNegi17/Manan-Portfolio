@@ -10,27 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const cursor = document.getElementById('cursor');
     const cursorFollower = document.getElementById('cursorFollower');
-    
-    // Check if it's a touch device
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  
+
     if (!isTouchDevice && cursor && cursorFollower) {
       document.body.classList.add('has-custom-cursor');
       let mouseX = 0, mouseY = 0;
       let followerX = 0, followerY = 0;
       let isMoving = false;
 
+      // Follower smooth trailing animation loop
       const updateCursor = () => {
-        cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-        
         const dx = mouseX - followerX;
         const dy = mouseY - followerY;
         
-        followerX += dx * 0.25;
-        followerY += dy * 0.25;
-        cursorFollower.style.transform = `translate(${followerX}px, ${followerY}px)`;
+        followerX += dx * 0.15; // Smooth trailing factor
+        followerY += dy * 0.15;
+        cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0)`;
         
-        // Pause requestAnimationFrame loop when the follower reaches the mouse to conserve CPU/GPU
+        // Sleep state to conserve system resources when mouse is still
         if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
           isMoving = false;
         } else {
@@ -42,13 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         
+        // Update the main pointer dot instantly in the event loop for zero latency
+        cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+        
         if (!isMoving) {
           isMoving = true;
           requestAnimationFrame(updateCursor);
         }
       });
   
-      // Add hover effect to links, buttons, and other interactable elements using event delegation
+      // Hover event delegation for all dynamic and static interactive elements
       document.addEventListener('mouseover', (e) => {
         const target = e.target.closest('a, button, input, textarea, .bento-card, .project-card, .browser-mock, .dot, .carousel-prev, .carousel-next, .modal__close');
         if (target) {
@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
+
   
     /* ==========================================================================
        NAVIGATION & MOBILE MENU

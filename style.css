@@ -96,8 +96,8 @@
     pointer-events: none;
     z-index: 100000;
     transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background 0.2s;
     will-change: transform;
+    transition: width 0.2s, height 0.2s, background 0.2s;
   }
   
   .cursor-follower {
@@ -111,8 +111,8 @@
     pointer-events: none;
     z-index: 99999;
     transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, border-color 0.2s;
     will-change: transform;
+    transition: width 0.2s, height 0.2s, border-color 0.2s, background-color 0.2s;
   }
   
   .cursor--hover {
@@ -485,9 +485,8 @@
   
   .chip {
     position: absolute;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(20, 20, 30, 0.85); /* Smooth, high-contrast background without performance cost */
     border: 1px solid var(--border-color);
-    backdrop-filter: var(--glass-blur);
     padding: 0.5rem 1rem;
     border-radius: 100px;
     font-family: var(--font-mono);
