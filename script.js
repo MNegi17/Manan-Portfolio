@@ -366,53 +366,111 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     }
 
+
     /* ==========================================================================
-       GSAP SCROLLYTELLING PROJECTS TRACKER & ANIMATION
+       ESPN-STYLE HORIZONTAL SCROLL SECTION
        ========================================================================== */
-    const projectSections = document.querySelectorAll('.project-scroll-section');
-    const filterButtons = document.querySelectorAll('#projectFilters .filter-btn');
+    const espnRail = document.getElementById('espnRail');
+    const espnPinWrapper = document.getElementById('espnPinWrapper');
+    const espnTimelineBar = document.getElementById('espnTimelineBar');
+    const espnTimelineDots = document.getElementById('espnTimelineDots');
+    const espnCounter = document.getElementById('espnCounter');
+    const espnScrollHint = document.getElementById('espnScrollHint');
+    const espnCards = document.querySelectorAll('.espn-card');
 
-    projectSections.forEach(section => {
-      const projectId = section.getAttribute('data-project-id');
-      const slide = document.querySelector(`.scrolly-slide[data-slide-id="${projectId}"]`);
-      const filterBtn = document.querySelector(`#projectFilters .filter-btn[data-target="${projectId}"]`);
+    if (espnRail && espnPinWrapper && espnCards.length > 0) {
+      const isMobile = window.innerWidth <= 900;
 
-      if (slide) {
-        ScrollTrigger.create({
-          trigger: section,
-          start: 'top 45%',
-          end: 'bottom 45%',
-          onToggle: (self) => {
-            if (self.isActive) {
-              // Smooth crossfade and scale up to active state
-              gsap.to(slide, { opacity: 1, scale: 1, duration: 0.6, ease: 'power2.out' });
-              slide.classList.add('active');
+      if (isMobile) {
+        // ── Mobile: ensure nothing is stuck ───────────────────────
+        // Force clear any transforms or overflow that could block scrolling
+        espnRail.style.transform = 'none';
+        espnRail.style.position = 'static';
+        espnPinWrapper.style.height = 'auto';
+        espnPinWrapper.style.overflow = 'visible';
+        espnPinWrapper.style.position = 'relative';
+        document.body.style.overflow = '';
 
-              // Highlight active filter tab
-              filterButtons.forEach(btn => btn.classList.remove('active'));
-              if (filterBtn) filterBtn.classList.add('active');
-            } else {
-              // Scale down slightly and fade out
-              gsap.to(slide, { opacity: 0, scale: 0.95, duration: 0.6, ease: 'power2.out' });
-              slide.classList.remove('active');
+        // Mark all cards as active (visible) on mobile
+        espnCards.forEach(c => c.classList.add('is-active'));
+
+      } else {
+        // ── Desktop: full GSAP horizontal scroll ──────────────────
+        const numCards = espnCards.length;
+
+        // Build dot indicators
+        espnCards.forEach((card, i) => {
+          const dot = document.createElement('span');
+          dot.className = 'espn-dot' + (i === 0 ? ' active' : '');
+          dot.addEventListener('click', () => {
+            // Scroll to approximate position for this card
+            const totalScrollDistance = espnPinWrapper.offsetHeight * (numCards - 1);
+            const sectionTop = espnPinWrapper.getBoundingClientRect().top + window.scrollY;
+            const targetScroll = sectionTop + (i / (numCards - 1)) * totalScrollDistance;
+            window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+          });
+          espnTimelineDots.appendChild(dot);
+        });
+
+        const dots = espnTimelineDots.querySelectorAll('.espn-dot');
+        let currentIdx = -1;
+
+        const updateActiveCard = (idx) => {
+          if (idx === currentIdx) return;
+          currentIdx = idx;
+
+          // Cards
+          espnCards.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+
+          // Dots
+          dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+
+          // Counter
+          const pad = (n) => String(n + 1).padStart(2, '0');
+          if (espnCounter) espnCounter.textContent = `${pad(idx)} / ${pad(numCards - 1)}`;
+        };
+
+        // Activate first card immediately
+        updateActiveCard(0);
+
+        // Register GSAP plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Create the scrollytelling scroll-pinned animation
+        gsap.to(espnRail, {
+          x: () => `-${(numCards - 1) * 100}vw`,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: espnPinWrapper,
+            start: 'top top',
+            end: () => `+=${(numCards - 1) * window.innerHeight * 1.2}`,
+            scrub: 0.8,
+            pin: true,
+            anticipatePin: 1,
+            onUpdate: (self) => {
+              const progress = self.progress;
+
+              // Update timeline bar
+              if (espnTimelineBar) {
+                espnTimelineBar.style.width = `${progress * 100}%`;
+              }
+
+              // Determine which card is active
+              const rawIdx = progress * (numCards - 1);
+              const newIdx = Math.round(rawIdx);
+              updateActiveCard(Math.min(newIdx, numCards - 1));
+
+              // Hide scroll hint after first scroll
+              if (espnScrollHint) {
+                espnScrollHint.classList.toggle('hidden', progress > 0.08);
+              }
             }
           }
         });
       }
-    });
+    }
 
-    // Anchor tabs navigation click handler
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = btn.getAttribute('data-target');
-        const targetSection = document.getElementById(`section-${targetId}`);
-        if (targetSection) {
-          // Smooth scroll to the center of the target section
-          targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      });
-    });
+
 
     /* ==========================================================================
        3D BROWSER MOCKUP TILT EFFECT (Desktop Only)
@@ -605,31 +663,20 @@ document.addEventListener('DOMContentLoaded', () => {
       modalBody.innerHTML = ''; 
     };
 
-    // Modal Trigger: View Details Button inside sections
+    // Modal Trigger: "Case Study" / "View Details" buttons inside ESPN cards
     document.querySelectorAll('.view-details-trigger').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const section = btn.closest('.project-scroll-section');
-        if (section) openModal(section);
+        // Support both old .project-scroll-section and new .espn-card
+        const card = btn.closest('.espn-card') || btn.closest('.project-scroll-section');
+        if (card) openModal(card);
       });
     });
 
-    // Modal Trigger: Browser Mockups inside slides
-    document.querySelectorAll('.scrolly-slide .browser-mock').forEach(mock => {
+    // Modal Trigger: Browser Mockups inside ESPN cards
+    document.querySelectorAll('.espn-card .browser-mock').forEach(mock => {
       mock.addEventListener('click', (e) => {
-        const slide = mock.closest('.scrolly-slide');
-        if (slide) {
-          const projectId = slide.getAttribute('data-slide-id');
-          const section = document.getElementById(`section-${projectId}`);
-          if (section) openModal(section);
-        }
-      });
-    });
-
-    // Modal Trigger: Browser Mockups inside mobile previews
-    document.querySelectorAll('.mobile-visual-preview .browser-mock').forEach(mock => {
-      mock.addEventListener('click', (e) => {
-        const section = mock.closest('.project-scroll-section');
-        if (section) openModal(section);
+        const card = mock.closest('.espn-card');
+        if (card) openModal(card);
       });
     });
 

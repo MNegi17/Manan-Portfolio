@@ -296,142 +296,38 @@
     </div>
   </section>
 
+
+
   <!-- ─────────────────────────────────────────── PROJECTS ── -->
-  <section class="projects section" id="projects">
-    <div class="container">
-      <div class="section-header">
+  <section class="projects-espn" id="projects">
+    <!-- Section Header (outside the pinned zone) -->
+    <div class="espn-header">
+      <div class="container">
         <p class="section-eyebrow">My Work</p>
         <h2 class="section-title">Featured Projects</h2>
-        <p class="section-desc">Scroll through my real-world case studies</p>
       </div>
+    </div>
 
-      <!-- Navigation Tabs -->
-      <div class="project-filters" id="projectFilters">
-        <button class="filter-btn active" data-target="dyno">Dyno Dashboard</button>
-        <button class="filter-btn" data-target="myntra">Myntra Auto Lister</button>
-        <button class="filter-btn" data-target="d2c">Shopify AutoLister</button>
-        <button class="filter-btn" data-target="reportflow">ReportFlow PUK</button>
-        <button class="filter-btn" data-target="bluecare">Health Database</button>
-        <button class="filter-btn" data-target="insurance">Insurance Analytics</button>
-      </div>
+    <!-- The pin target: this element stays in view while rail scrolls -->
+    <div class="espn-pin-wrapper" id="espnPinWrapper">
 
-      <!-- Scrollytelling Projects Layout -->
-      <div class="scrolly-container">
-        
-        <!-- Pinned Widescreen Visuals -->
-        <div class="scrolly-visuals">
-          <div class="scrolly-visuals-inner">
-            
-            <!-- Slide 1: Dyno -->
-            <div class="scrolly-slide active" data-slide-id="dyno">
-              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, transparent 70%);"></div>
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
-                  <span class="browser-address">dyno-sales-dashboard.app</span>
-                </div>
-                <div class="browser-body">
-                  <img src="images/Dyno1.png" alt="Dyno Sales Dashboard" />
-                </div>
-              </div>
-              <div class="slide-nav-hint">Images 1 of 5 · Click window for details carousel</div>
-            </div>
-
-            <!-- Slide 2: Myntra -->
-            <div class="scrolly-slide" data-slide-id="myntra">
-              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, transparent 70%);"></div>
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
-                  <span class="browser-address">myntra-autolister.app</span>
-                </div>
-                <div class="browser-body">
-                  <img src="images/Myntra1.png" alt="Myntra Auto Lister PRO" />
-                </div>
-              </div>
-              <div class="slide-nav-hint">Images 1 of 2 · Click window for details carousel</div>
-            </div>
-
-            <!-- Slide 3: D2C Shopify -->
-            <div class="scrolly-slide" data-slide-id="d2c">
-              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, transparent 70%);"></div>
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
-                  <span class="browser-address">d2c-autolister.app</span>
-                </div>
-                <div class="browser-body">
-                  <img src="images/D2C1.png" alt="D2C Shopify AutoLister Pro" />
-                </div>
-              </div>
-              <div class="slide-nav-hint">Images 1 of 2 · Click window for details carousel</div>
-            </div>
-
-            <!-- Slide 4: ReportFlow -->
-            <div class="scrolly-slide" data-slide-id="reportflow">
-              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, transparent 70%);"></div>
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
-                  <span class="browser-address">reportflow-puk.app</span>
-                </div>
-                <div class="browser-body">
-                  <img src="images/ReportFlow1.png" alt="ReportFlow PUK" />
-                </div>
-              </div>
-              <div class="slide-nav-hint">Images 1 of 4 · Click window for details carousel</div>
-            </div>
-
-            <!-- Slide 5: Blue Care DB -->
-            <div class="scrolly-slide" data-slide-id="bluecare">
-              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);"></div>
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
-                  <span class="browser-address">blue-care-database.local</span>
-                </div>
-                <div class="browser-body">
-                  <img src="images/Infomatica-1.png" alt="Blue Care Health Database" />
-                </div>
-              </div>
-              <div class="slide-nav-hint">Images 1 of 3 · Click window for details carousel</div>
-            </div>
-
-            <!-- Slide 6: Insurance -->
-            <div class="scrolly-slide" data-slide-id="insurance">
-              <div class="slide-bg-glow" style="background: radial-gradient(circle, rgba(112, 0, 255, 0.1) 0%, transparent 70%);"></div>
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
-                  <span class="browser-address">insurance-analytics.dashboard</span>
-                </div>
-                <div class="browser-body">
-                  <img src="images/insurance_dashboard.png" alt="Insurance Analytics Dashboard" />
-                </div>
-              </div>
-              <div class="slide-nav-hint">Click window for details carousel</div>
-            </div>
-
-          </div>
+      <!-- Timeline Progress Bar -->
+      <div class="espn-timeline" id="espnTimeline">
+        <div class="espn-timeline-bar" id="espnTimelineBar"></div>
+        <div class="espn-timeline-dots" id="espnTimelineDots">
+          <!-- JS will inject dots -->
         </div>
+      </div>
 
-        <!-- Scrolling Text Column -->
-        <div class="scrolly-scroll">
-          
-          <!-- Section 1: Dyno -->
-          <div class="project-scroll-section" id="section-dyno" data-project-id="dyno"
+      <!-- Counter -->
+      <div class="espn-counter" id="espnCounter">01 / 06</div>
+
+      <!-- Horizontal Rail -->
+      <div class="espn-rail-overflow">
+        <div class="espn-rail" id="espnRail">
+
+          <!-- Card 1: Dyno Dashboard -->
+          <div class="espn-card" data-project-id="dyno"
                data-title="Dyno Sales Dashboard"
                data-desc-full="Dyno Sales Dashboard is a real-time sales analytics dashboard built for tracking revenue, units, and targets across multiple channels. Built using React and Vite, it integrates with Supabase to provide target achievement indicators, top performers listings, and dynamic monthly filters."
                data-tools="React, Vite, Supabase, Recharts, Vercel"
@@ -439,49 +335,55 @@
                data-images="images/Dyno1.png,images/Dyno2.png,images/Dyno3.png,images/Dyno4.png,images/Dyno5.png"
                data-github="https://github.com/MNegi17/Dyno-Dashboard"
                data-demo="https://dyno-dashboard.vercel.app/">
-            
-            <div class="mobile-visual-preview">
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
+            <div class="espn-card-glow" style="--glow-color: rgba(0,240,255,0.18);"></div>
+            <div class="espn-card-inner">
+              <!-- Left Meta -->
+              <div class="espn-meta espn-meta--left">
+                <div class="espn-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Supabase</span>
+                  <span class="tag">Recharts</span>
                 </div>
-                <div class="browser-body">
-                  <img src="images/Dyno1.png" alt="Dyno Sales Dashboard" />
+                <div class="espn-metrics">
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>Real-time target progression</span></div>
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>Dynamic monthly filter graphs</span></div>
                 </div>
               </div>
-            </div>
-
-            <div class="scroll-section-tags">
-              <span class="tag">React</span>
-              <span class="tag">Supabase</span>
-              <span class="tag">Recharts</span>
-            </div>
-            <h3 class="scroll-section-title">Dyno Sales Dashboard</h3>
-            <p class="scroll-section-desc">High-performance real-time sales analytics dashboard with division tracking. Displays key sales trends, dynamically filters category listings, and outputs real-time target versus achievement graphs.</p>
-            <div class="scroll-section-metrics">
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">Real-time target progression metrics</span>
+              <!-- Center Visual -->
+              <div class="espn-visual">
+                <div class="espn-project-name">
+                  <span class="espn-name-main">DYNO</span>
+                  <span class="espn-name-sub">Dashboard</span>
+                </div>
+                <div class="browser-mock espn-browser" id="espnBrowser-dyno">
+                  <div class="browser-header">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <span class="browser-address">dyno-dashboard.vercel.app</span>
+                  </div>
+                  <div class="browser-body">
+                    <img src="images/Dyno1.png" alt="Dyno Sales Dashboard" />
+                  </div>
+                </div>
+                <p class="espn-desc">High-performance real-time sales analytics dashboard with division tracking and target vs achievement graphs.</p>
               </div>
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">Dynamic filter-by-month interactive graphs</span>
+              <!-- Right Actions -->
+              <div class="espn-meta espn-meta--right">
+                <div class="espn-fig-label">Fig. 01</div>
+                <div class="espn-actions">
+                  <button class="btn btn--primary view-details-trigger espn-view-btn">
+                    <span>Case Study</span><i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                  <a href="https://dyno-dashboard.vercel.app/" target="_blank" class="espn-link espn-link--demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                  <a href="https://github.com/MNegi17/Dyno-Dashboard" target="_blank" class="espn-link espn-link--code"><i class="fab fa-github"></i> Source</a>
+                </div>
               </div>
-            </div>
-            <div class="scroll-section-actions">
-              <button class="btn btn--primary view-details-trigger">
-                <span>View Details</span>
-                <i class="fas fa-expand-arrows-alt"></i>
-              </button>
-              <a href="https://dyno-dashboard.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-              <a href="https://github.com/MNegi17/Dyno-Dashboard" target="_blank" class="project-link repo-link"><i class="fab fa-github"></i> Code</a>
             </div>
           </div>
 
-          <!-- Section 2: Myntra -->
-          <div class="project-scroll-section" id="section-myntra" data-project-id="myntra"
+          <!-- Card 2: Myntra Auto Lister -->
+          <div class="espn-card" data-project-id="myntra"
                data-title="MN Myntra Auto Lister PRO"
                data-desc-full="MN Myntra Auto Lister PRO is a premium, AI-powered catalog automation web application built for fashion e-commerce vendors. The tool automates the tedious, manual process of catalog listing on Myntra by mapping size variants, prices, barcodes, and fabric attributes into Myntra's official SKU templates. It integrates Google Gemini Vision AI to analyze product photos and automatically classify visual design attributes like necklines, prints, patterns, and sleeve styles."
                data-tools="Python, Flask, Google Gemini AI, Pandas, MongoDB"
@@ -489,49 +391,52 @@
                data-images="images/Myntra1.png,images/Myntra2.png"
                data-github="https://github.com/MNegi17/Myntra-Auto-Lister"
                data-demo="https://myntra-auto-lister-production.up.railway.app/">
-            
-            <div class="mobile-visual-preview">
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
+            <div class="espn-card-glow" style="--glow-color: rgba(0,240,255,0.15);"></div>
+            <div class="espn-card-inner">
+              <div class="espn-meta espn-meta--left">
+                <div class="espn-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Gemini AI</span>
+                  <span class="tag">MongoDB</span>
                 </div>
-                <div class="browser-body">
-                  <img src="images/Myntra1.png" alt="Myntra Auto Lister PRO" />
+                <div class="espn-metrics">
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>Saves 95% data entry time</span></div>
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>Analyzed 10k+ SKU sheets</span></div>
                 </div>
               </div>
-            </div>
-
-            <div class="scroll-section-tags">
-              <span class="tag">Python</span>
-              <span class="tag">Gemini AI</span>
-              <span class="tag">MongoDB</span>
-            </div>
-            <h3 class="scroll-section-title">Myntra Auto Lister PRO</h3>
-            <p class="scroll-section-desc">AI-powered catalog automation application for fashion e-commerce vendors. Integrates Google Gemini Vision AI to dynamically extract styling attributes directly from garment photographs, and handles warehouse to Myntra size template conversions.</p>
-            <div class="scroll-section-metrics">
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">Saves 95% manual data entry time</span>
+              <div class="espn-visual">
+                <div class="espn-project-name">
+                  <span class="espn-name-main">MYNTRA</span>
+                  <span class="espn-name-sub">Auto Lister PRO</span>
+                </div>
+                <div class="browser-mock espn-browser">
+                  <div class="browser-header">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <span class="browser-address">myntra-autolister.app</span>
+                  </div>
+                  <div class="browser-body">
+                    <img src="images/Myntra1.png" alt="Myntra Auto Lister PRO" />
+                  </div>
+                </div>
+                <p class="espn-desc">AI-powered catalog automation using Gemini Vision AI to extract garment attributes from photos automatically.</p>
               </div>
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">Analyzed 10k+ SKU sheets automatically</span>
+              <div class="espn-meta espn-meta--right">
+                <div class="espn-fig-label">Fig. 02</div>
+                <div class="espn-actions">
+                  <button class="btn btn--primary view-details-trigger espn-view-btn">
+                    <span>Case Study</span><i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                  <a href="https://myntra-auto-lister-production.up.railway.app/" target="_blank" class="espn-link espn-link--demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                  <a href="https://github.com/MNegi17/Myntra-Auto-Lister" target="_blank" class="espn-link espn-link--code"><i class="fab fa-github"></i> Source</a>
+                </div>
               </div>
-            </div>
-            <div class="scroll-section-actions">
-              <button class="btn btn--primary view-details-trigger">
-                <span>View Details</span>
-                <i class="fas fa-expand-arrows-alt"></i>
-              </button>
-              <a href="https://myntra-auto-lister-production.up.railway.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-              <a href="https://github.com/MNegi17/Myntra-Auto-Lister" target="_blank" class="project-link repo-link"><i class="fab fa-github"></i> Code</a>
             </div>
           </div>
 
-          <!-- Section 3: D2C Shopify -->
-          <div class="project-scroll-section" id="section-d2c" data-project-id="d2c"
+          <!-- Card 3: D2C Shopify -->
+          <div class="espn-card" data-project-id="d2c"
                data-title="D2C Shopify AutoLister Pro"
                data-desc-full="D2C Shopify AutoLister Pro is a robust, widescreen console dashboard application connecting a React (Next.js) frontend with a Python FastAPI backend. Integrated with serverless PostgreSQL (Neon), it automates warehouse mapping rules, database schemas, and syncs listings directly to Shopify stores via API."
                data-tools="Next.js, FastAPI, PostgreSQL (Neon), Shopify API, Docker"
@@ -539,49 +444,52 @@
                data-images="images/D2C1.png,images/D2C2.png"
                data-github="https://github.com/MNegi17/D2C_AutoLister"
                data-demo="https://d2c-autolister-pro.up.railway.app/">
-            
-            <div class="mobile-visual-preview">
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
+            <div class="espn-card-glow" style="--glow-color: rgba(112,0,255,0.18);"></div>
+            <div class="espn-card-inner">
+              <div class="espn-meta espn-meta--left">
+                <div class="espn-tags">
+                  <span class="tag">Next.js</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">Postgres</span>
                 </div>
-                <div class="browser-body">
-                  <img src="images/D2C1.png" alt="D2C Shopify AutoLister Pro" />
+                <div class="espn-metrics">
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>Automates Shopify uploads</span></div>
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>Real-time server logging</span></div>
                 </div>
               </div>
-            </div>
-
-            <div class="scroll-section-tags">
-              <span class="tag">Next.js</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">Postgres</span>
-            </div>
-            <h3 class="scroll-section-title">D2C Shopify AutoLister</h3>
-            <p class="scroll-section-desc">Widescreen dashboard console automating product creation and database syncs. Seamlessly maps warehouse structures to Shopify stores via API endpoints, and features an integrated real-time server log console.</p>
-            <div class="scroll-section-metrics">
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">Automates shopify uploads & database syncs</span>
+              <div class="espn-visual">
+                <div class="espn-project-name">
+                  <span class="espn-name-main">D2C</span>
+                  <span class="espn-name-sub">Shopify AutoLister</span>
+                </div>
+                <div class="browser-mock espn-browser">
+                  <div class="browser-header">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <span class="browser-address">d2c-autolister.app</span>
+                  </div>
+                  <div class="browser-body">
+                    <img src="images/D2C1.png" alt="D2C Shopify AutoLister Pro" />
+                  </div>
+                </div>
+                <p class="espn-desc">Widescreen console dashboard connecting Next.js with FastAPI to automate warehouse-to-Shopify product syncs.</p>
               </div>
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">Real-time web server logging dashboard</span>
+              <div class="espn-meta espn-meta--right">
+                <div class="espn-fig-label">Fig. 03</div>
+                <div class="espn-actions">
+                  <button class="btn btn--primary view-details-trigger espn-view-btn">
+                    <span>Case Study</span><i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                  <a href="https://d2c-autolister-pro.up.railway.app/" target="_blank" class="espn-link espn-link--demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                  <a href="https://github.com/MNegi17/D2C_AutoLister" target="_blank" class="espn-link espn-link--code"><i class="fab fa-github"></i> Source</a>
+                </div>
               </div>
-            </div>
-            <div class="scroll-section-actions">
-              <button class="btn btn--primary view-details-trigger">
-                <span>View Details</span>
-                <i class="fas fa-expand-arrows-alt"></i>
-              </button>
-              <a href="https://d2c-autolister-pro.up.railway.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-              <a href="https://github.com/MNegi17/D2C_AutoLister" target="_blank" class="project-link repo-link"><i class="fab fa-github"></i> Code</a>
             </div>
           </div>
 
-          <!-- Section 4: ReportFlow -->
-          <div class="project-scroll-section" id="section-reportflow" data-project-id="reportflow"
+          <!-- Card 4: ReportFlow PUK -->
+          <div class="espn-card" data-project-id="reportflow"
                data-title="ReportFlow PUK"
                data-desc-full="ReportFlow PUK is a business analytics and automation workflow portal created for Purple United Kids. It automates complex spreadsheet processing, return rate tracking, and generates detailed sales insights for executive review."
                data-tools="React, Node.js, Excel Automation, Data Analysis"
@@ -589,48 +497,51 @@
                data-images="images/ReportFlow1.png,images/ReportFlow2.png,images/ReportFlow3.png,images/ReportFlow4.png"
                data-github=""
                data-demo="https://reportflow-puk.netlify.app/">
-            
-            <div class="mobile-visual-preview">
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
+            <div class="espn-card-glow" style="--glow-color: rgba(112,0,255,0.15);"></div>
+            <div class="espn-card-inner">
+              <div class="espn-meta espn-meta--left">
+                <div class="espn-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Excel Automation</span>
+                  <span class="tag">PUK</span>
                 </div>
-                <div class="browser-body">
-                  <img src="images/ReportFlow1.png" alt="ReportFlow PUK" />
+                <div class="espn-metrics">
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>Report generation 4× faster</span></div>
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>Live return rate tracking</span></div>
                 </div>
               </div>
-            </div>
-
-            <div class="scroll-section-tags">
-              <span class="tag">React</span>
-              <span class="tag">Excel Automation</span>
-              <span class="tag">PUK</span>
-            </div>
-            <h3 class="scroll-section-title">ReportFlow PUK</h3>
-            <p class="scroll-section-desc">Automated data analysis and dashboard reporter for business operations. Created for Purple United Kids to speed up warehouse data cleaning, track return logs, and automatically translate spreadsheet data into clear summaries.</p>
-            <div class="scroll-section-metrics">
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">Speeds up report generation by 4x</span>
+              <div class="espn-visual">
+                <div class="espn-project-name">
+                  <span class="espn-name-main">REPORT</span>
+                  <span class="espn-name-sub">Flow PUK</span>
+                </div>
+                <div class="browser-mock espn-browser">
+                  <div class="browser-header">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <span class="browser-address">reportflow-puk.netlify.app</span>
+                  </div>
+                  <div class="browser-body">
+                    <img src="images/ReportFlow1.png" alt="ReportFlow PUK" />
+                  </div>
+                </div>
+                <p class="espn-desc">Automated business analytics portal for Purple United Kids — speeds spreadsheet reports and tracks live return rates.</p>
               </div>
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">Tracks warehouse return metrics live</span>
+              <div class="espn-meta espn-meta--right">
+                <div class="espn-fig-label">Fig. 04</div>
+                <div class="espn-actions">
+                  <button class="btn btn--primary view-details-trigger espn-view-btn">
+                    <span>Case Study</span><i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                  <a href="https://reportflow-puk.netlify.app/" target="_blank" class="espn-link espn-link--demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                </div>
               </div>
-            </div>
-            <div class="scroll-section-actions">
-              <button class="btn btn--primary view-details-trigger">
-                <span>View Details</span>
-                <i class="fas fa-expand-arrows-alt"></i>
-              </button>
-              <a href="https://reportflow-puk.netlify.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
             </div>
           </div>
 
-          <!-- Section 5: Blue Care -->
-          <div class="project-scroll-section" id="section-bluecare" data-project-id="bluecare"
+          <!-- Card 5: Blue Care Health DB -->
+          <div class="espn-card" data-project-id="bluecare"
                data-title="Blue Care Health Database"
                data-desc-full="Developed a database migration and validation pipeline for managing health subscriber cohorts. Utilized the Informatica PowerCenter ETL suite to perform data cleansing, normalization, and transform records into customized subscriber letters in XML format."
                data-tools="Informatica PowerCenter, SQL, Data Validation, XML"
@@ -638,47 +549,50 @@
                data-images="images/Infomatica-1.png,images/Informatica-2.png,images/Informatica-3.png"
                data-github=""
                data-demo="">
-            
-            <div class="mobile-visual-preview">
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
+            <div class="espn-card-glow" style="--glow-color: rgba(0,240,255,0.12);"></div>
+            <div class="espn-card-inner">
+              <div class="espn-meta espn-meta--left">
+                <div class="espn-tags">
+                  <span class="tag">ETL</span>
+                  <span class="tag">SQL</span>
+                  <span class="tag">Informatica</span>
                 </div>
-                <div class="browser-body">
-                  <img src="images/Infomatica-1.png" alt="Blue Care Health Database" />
+                <div class="espn-metrics">
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>99.9% validation accuracy</span></div>
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>Massive healthcare cohorts</span></div>
                 </div>
               </div>
-            </div>
-
-            <div class="scroll-section-tags">
-              <span class="tag">ETL</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Informatica</span>
-            </div>
-            <h3 class="scroll-section-title">Blue Care Health Database</h3>
-            <p class="scroll-section-desc">Robust database infrastructure with data validation and XML output. Gathers demographic member records, executes validation scripts via Informatica PowerCenter ETL suite, and maps secure data output blocks.</p>
-            <div class="scroll-section-metrics">
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">99.9% database validation accuracy</span>
+              <div class="espn-visual">
+                <div class="espn-project-name">
+                  <span class="espn-name-main">BLUE</span>
+                  <span class="espn-name-sub">Care Health DB</span>
+                </div>
+                <div class="browser-mock espn-browser">
+                  <div class="browser-header">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <span class="browser-address">blue-care-database.local</span>
+                  </div>
+                  <div class="browser-body">
+                    <img src="images/Infomatica-1.png" alt="Blue Care Health Database" />
+                  </div>
+                </div>
+                <p class="espn-desc">Informatica PowerCenter ETL pipeline managing healthcare subscriber cohorts with 99.9% XML output accuracy.</p>
               </div>
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">Processes massive healthcare cohorts safely</span>
+              <div class="espn-meta espn-meta--right">
+                <div class="espn-fig-label">Fig. 05</div>
+                <div class="espn-actions">
+                  <button class="btn btn--primary view-details-trigger espn-view-btn">
+                    <span>Case Study</span><i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="scroll-section-actions">
-              <button class="btn btn--primary view-details-trigger">
-                <span>View Details</span>
-                <i class="fas fa-expand-arrows-alt"></i>
-              </button>
             </div>
           </div>
 
-          <!-- Section 6: Insurance -->
-          <div class="project-scroll-section" id="section-insurance" data-project-id="insurance"
+          <!-- Card 6: Insurance Analytics -->
+          <div class="espn-card" data-project-id="insurance"
                data-title="Insurance Analytics Dashboard"
                data-desc-full="Developed an interactive Power BI dashboard featuring dynamic KPIs (Total Premium, Claims, Loss Ratio) and demographic segmentation trends. Built robust data models and DAX queries to enable stakeholders to track risk patterns and profitability."
                data-tools="Power BI, DAX, Power Query, Data Modeling"
@@ -686,61 +600,61 @@
                data-images="images/insurance_dashboard.png"
                data-github="https://github.com/MNegi17/Insurance-Analytics-Dashboard-using-Power-BI"
                data-demo="">
-            
-            <div class="mobile-visual-preview">
-              <div class="browser-mock">
-                <div class="browser-header">
-                  <span class="browser-dot dot-red"></span>
-                  <span class="browser-dot dot-yellow"></span>
-                  <span class="browser-dot dot-green"></span>
+            <div class="espn-card-glow" style="--glow-color: rgba(112,0,255,0.12);"></div>
+            <div class="espn-card-inner">
+              <div class="espn-meta espn-meta--left">
+                <div class="espn-tags">
+                  <span class="tag">Power BI</span>
+                  <span class="tag">DAX</span>
+                  <span class="tag">Data Model</span>
                 </div>
-                <div class="browser-body">
-                  <img src="images/insurance_dashboard.png" alt="Insurance Analytics Dashboard" />
+                <div class="espn-metrics">
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>3 databases consolidated</span></div>
+                  <div class="espn-metric"><i class="fas fa-check-circle"></i><span>Dynamic demographic slicers</span></div>
                 </div>
               </div>
-            </div>
-
-            <div class="scroll-section-tags">
-              <span class="tag">Power BI</span>
-              <span class="tag">DAX</span>
-              <span class="tag">Data Model</span>
-            </div>
-            <h3 class="scroll-section-title">Insurance Analytics</h3>
-            <p class="scroll-section-desc">Interactive Power BI dashboard for risk monitoring and claim patterns. Features business KPIs like loss ratios, aggregates insurance database records, and parses claims categories with advanced DAX expressions.</p>
-            <div class="scroll-section-metrics">
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">Consolidated 3 database logs seamlessly</span>
+              <div class="espn-visual">
+                <div class="espn-project-name">
+                  <span class="espn-name-main">INSURANCE</span>
+                  <span class="espn-name-sub">Analytics Dashboard</span>
+                </div>
+                <div class="browser-mock espn-browser">
+                  <div class="browser-header">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <span class="browser-address">insurance-analytics.dashboard</span>
+                  </div>
+                  <div class="browser-body">
+                    <img src="images/insurance_dashboard.png" alt="Insurance Analytics Dashboard" />
+                  </div>
+                </div>
+                <p class="espn-desc">Interactive Power BI dashboard tracking insurance KPIs, loss ratios and demographic risk patterns with DAX queries.</p>
               </div>
-              <div class="scroll-section-metric-item">
-                <span class="scroll-section-metric-icon"><i class="fas fa-check-circle"></i></span>
-                <span class="scroll-section-metric-text">Features interactive demographic charts</span>
+              <div class="espn-meta espn-meta--right">
+                <div class="espn-fig-label">Fig. 06</div>
+                <div class="espn-actions">
+                  <button class="btn btn--primary view-details-trigger espn-view-btn">
+                    <span>Case Study</span><i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                  <a href="https://github.com/MNegi17/Insurance-Analytics-Dashboard-using-Power-BI" target="_blank" class="espn-link espn-link--code"><i class="fab fa-github"></i> Source</a>
+                </div>
               </div>
-            </div>
-            <div class="scroll-section-actions">
-              <button class="btn btn--primary view-details-trigger">
-                <span>View Details</span>
-                <i class="fas fa-expand-arrows-alt"></i>
-              </button>
-              <a href="https://github.com/MNegi17/Insurance-Analytics-Dashboard-using-Power-BI" target="_blank" class="project-link repo-link"><i class="fab fa-github"></i> Code</a>
             </div>
           </div>
 
-        </div>
+        </div><!-- /espn-rail -->
+      </div><!-- /espn-rail-overflow -->
 
-        <!-- "More Coming" card -->
-        <div class="project-card project-card--coming reveal-card" id="projectComingSoon">
-          <div class="coming-soon-content">
-            <div class="coming-icon"><i class="fas fa-plus-circle"></i></div>
-            <h3>More Projects</h3>
-            <p>Coming Soon</p>
-            <span class="coming-tag">Stay tuned ✨</span>
-          </div>
-        </div>
-
+      <!-- Scroll hint -->
+      <div class="espn-scroll-hint" id="espnScrollHint">
+        <span>Scroll to explore</span>
+        <i class="fas fa-arrow-down espn-scroll-arrow"></i>
       </div>
-    </div>
-  </section>
+
+    </div><!-- /espn-pin-wrapper -->
+  </section><!-- /projects-espn -->
+
 
   <!-- ─────────────────────────────────────────── GALLERY ── -->
   <section class="gallery section" id="gallery">
@@ -818,7 +732,7 @@
           <p class="section-eyebrow">Get In Touch</p>
           <h2 class="section-title">Let's Work<br /><span class="text-gradient">Together</span></h2>
           <p class="contact__desc">
-            Whether you're looking for a data analyst intern, have a project in mind,
+            Whether you're looking for a GenAI &amp; Automation Engineer, have a project in mind,
             or just want to connect — my inbox is always open.
           </p>
           <div class="contact__info">
@@ -879,7 +793,7 @@
       <div class="footer__inner">
         <a href="#" class="footer__logo">
           <span class="logo-text">Manan<span class="logo-dot">.</span></span>
-          <p>Aspiring Data Analyst</p>
+          <p>GenAI &amp; Automation Engineer</p>
         </a>
         <div class="footer__links">
           <a href="#about">About</a>
